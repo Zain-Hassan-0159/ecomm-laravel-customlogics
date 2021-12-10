@@ -165,8 +165,8 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Category</a>
+                            <a class="js-arrow" href="dashboard"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <a class="js-arrow" href="category"><i class="fas fa-tachometer-alt"></i>Category</a>
                         </li>
                     </ul>
                 </nav>
@@ -214,6 +214,12 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        @section('container')
+                        @show
+                    </div>
+                </div>
             </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
