@@ -165,8 +165,8 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
-                            <a class="js-arrow" href="dashboard"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <a class="js-arrow" href="category"><i class="fas fa-tachometer-alt"></i>Category</a>
+                            <a class="js-arrow" href="{{url('admin/dashboard')}}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <a class="js-arrow" href="{{url('admin/category')}}"><i class="fas fa-tachometer-alt"></i>Category</a>
                         </li>
                     </ul>
                 </nav>
@@ -199,7 +199,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="logout">
+                                                <a href="{{url('admin/logout')}}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
