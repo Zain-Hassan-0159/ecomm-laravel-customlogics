@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>@yield('page_title')</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('css/font-face.css')}}" rel="stylesheet" media="all">
@@ -167,6 +167,7 @@
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/dashboard')}}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <a class="js-arrow" href="{{url('admin/category')}}"><i class="fas fa-tachometer-alt"></i>Category</a>
+                            <a class="js-arrow" href="{{url('admin/coupon')}}"><i class="fas fa-tachometer-alt"></i>Coupon</a>
                         </li>
                     </ul>
                 </nav>
