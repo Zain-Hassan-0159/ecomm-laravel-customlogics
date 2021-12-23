@@ -1,5 +1,6 @@
 @extends('admin/layout');
 @section('page_title', 'Coupon')
+@section('coupon_select', 'active')
 @section('container')
 {{session('message')}}
 <h1 class="mb-5">Coupon</h1>
@@ -28,8 +29,13 @@
                         <td>{{$list->code}}</td>
                         <td>{{$list->value}}</td>
                         <td>
-                         <a class="btn btn-danger" href="{{url('admin/coupon/delete/')}}/{{$list->id}}">Delete</a>
-                         <a class="btn btn-success" href="{{url('admin/coupon/manage_coupon/')}}/{{$list->id}}">Edit</a>
+                         <a class="btn btn-secondary" href="{{url('admin/coupon/manage_coupon/')}}/{{$list->id}}">Edit</a>
+                         @if($list->status==1)
+                            <a class="btn btn-success" href="{{url('admin/coupon/status/0')}}/{{$list->id}}">Active</a>
+                        @elseif($list->status==0)
+                            <a class="btn btn-warning" href="{{url('admin/coupon/status/1')}}/{{$list->id}}">Deactive</a>
+                        @endif
+                        <a class="btn btn-danger" href="{{url('admin/coupon/delete/')}}/{{$list->id}}">Delete</a>
                         </td>
                     </tr>
                     @endforeach

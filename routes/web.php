@@ -20,10 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// User Login Routes
 Route::get('admin',[AdminController::class, 'index']);
 Route::post('admin/auth',[AdminController::class, 'auth'])->name('admin.auth');
 
+// Middleware Route For User authentication
 Route::group(['middleware'=>'admin_auth'],function(){
+
+    // Dashboard Route
     Route::get('admin/dashboard',[AdminController::class, 'dashboard']);
 
     // Category Routes
@@ -33,6 +37,9 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::post('admin/category/manage_category_process',[CategoryController::class, 'manage_category_process'])->name('category.manage_category_process');
     Route::get('admin/category/delete/{id}',[CategoryController::class, 'delete']);
 
+    // Category active/deactive Route
+    Route::get('admin/category/status/{status}/{id}',[CategoryController::class, 'status']);
+
     // Coupon Routes
     Route::get('admin/coupon',[CouponController::class, 'index']);
     Route::get('admin/coupon/manage_coupon',[CouponController::class, 'manage_coupon']);
@@ -40,7 +47,10 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::post('admin/coupon/manage_coupon_process',[CouponController::class, 'manage_coupon_process'])->name('coupon.manage_coupon_process');
     Route::get('admin/coupon/delete/{id}',[CouponController::class, 'delete']);
 
+    // Category active/deactive Route
+    Route::get('admin/coupon/status/{status}/{id}',[CouponController::class, 'status']);
 
+    // Logout Route
     Route::get('admin/logout', function () {
         session()->forget('ADMIN_LOGIN');
         session()->forget('ADMIN_ID');
