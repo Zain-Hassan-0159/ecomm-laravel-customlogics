@@ -68,6 +68,9 @@
                             <li class="@yield('size_select')">
                                 <a class="js-arrow" href="{{url('admin/size')}}"><i class="fas fa-window-maximize"></i>Size</a>
                             </li>
+                            <li class="@yield('color_select')">
+                                <a class="js-arrow" href="{{url('admin/color')}}"><i class="fas fa-adjust"></i>Color</a>
+                            </li>
                     </ul>
                 </div>
             </nav>
@@ -95,6 +98,9 @@
                         </li>
                         <li class="@yield('size_select')">
                             <a class="js-arrow" href="{{url('admin/size')}}"><i class="fas fa-window-maximize"></i>Size</a>
+                        </li>
+                        <li class="@yield('color_select')">
+                            <a class="js-arrow" href="{{url('admin/color')}}"><i class="fas fa-adjust"></i>Color</a>
                         </li>
                         
                     </ul>

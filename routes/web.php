@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\ColorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +58,15 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/size/delete/{id}',[SizeController::class, 'delete']);
     // Size active/deactive Route
     Route::get('admin/size/status/{status}/{id}',[SizeController::class, 'status']);
+
+    // Color Routes
+    Route::get('admin/color',[ColorController::class, 'index']);
+    Route::get('admin/color/manage_color',[ColorController::class, 'manage_color']);
+    Route::get('admin/color/manage_color/{id}',[ColorController::class, 'manage_color']);
+    Route::post('admin/color/manage_color_process',[ColorController::class, 'manage_color_process'])->name('color.manage_color_process');
+    Route::get('admin/color/delete/{id}',[ColorController::class, 'delete']);
+    // Color active/deactive Route
+    Route::get('admin/color/status/{status}/{id}',[ColorController::class, 'status']);
 
     // Logout Route
     Route::get('admin/logout', function () {
