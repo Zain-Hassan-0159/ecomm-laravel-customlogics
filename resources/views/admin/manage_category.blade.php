@@ -1,4 +1,4 @@
-@extends('admin/layout');
+@extends('admin/layout')
 @section('page_title', 'Manage Category')
 @section('category_select', 'active')
 @section('container')
