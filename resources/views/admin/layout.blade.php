@@ -71,6 +71,9 @@
                             <li class="@yield('color_select')">
                                 <a class="js-arrow" href="{{url('admin/color')}}"><i class="fas fa-adjust"></i>Color</a>
                             </li>
+                            <li class="@yield('product_select')">
+                                <a class="js-arrow" href="{{url('admin/product')}}"><i class="fas fa-file-image-o "></i>Product</a>
+                            </li>
                     </ul>
                 </div>
             </nav>
@@ -101,6 +104,9 @@
                         </li>
                         <li class="@yield('color_select')">
                             <a class="js-arrow" href="{{url('admin/color')}}"><i class="fas fa-adjust"></i>Color</a>
+                        </li>
+                        <li class="@yield('product_select')">
+                            <a class="js-arrow" href="{{url('admin/product')}}"><i class="fas fa-file-image-o "></i>Product</a>
                         </li>
                         
                     </ul>

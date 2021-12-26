@@ -1,6 +1,6 @@
 @extends('admin/layout')
-@section('page_title', 'Color')
-@section('color_select', 'active')
+@section('page_title', 'Product')
+@section('product_select', 'active')
 @section('container')
 
 @if(session('message'))
@@ -12,9 +12,10 @@
         </button>
     </div>
 @endif
-<h1 class="mb-5">Color</h1>
-<a href="{{url('admin/color/manage_color')}}">
-    <button class="btn btn-success">Add Color</button>
+										
+<h1 class="mb-5">Product</h1>
+<a href="{{url('admin/product/manage_product')}}">
+    <button class="btn btn-success">Add Product</button>
 </a>
 <div class="row m-t-30">
     <div class="col-md-12">
@@ -24,7 +25,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Color</th>
+                        <th>Name</th>
+                        <th>Slug</th>
+                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -32,15 +35,17 @@
                     @foreach($data as $list)
                     <tr>
                         <td>{{$list->id}}</td>
-                        <td>{{$list->color}}</td>
+                        <td>{{$list->name}}</td>
+                        <td>{{$list->slug}}</td>
+                        <td><img src="{{asset('storage/media/'.$list->image)}}" width="50px" /></td>
                         <td>
-                         <a class="btn btn-secondary" href="{{url('admin/color/manage_color/')}}/{{$list->id}}">Edit</a>
+                         <a class="btn btn-secondary" href="{{url('admin/product/manage_product/')}}/{{$list->id}}">Edit</a>
                         @if($list->status==1)
-                            <a class="btn btn-success" href="{{url('admin/color/status/0')}}/{{$list->id}}">Active</a>
+                            <a class="btn btn-success" href="{{url('admin/product/status/0')}}/{{$list->id}}">Active</a>
                         @elseif($list->status==0)
-                            <a class="btn btn-warning" href="{{url('admin/color/status/1')}}/{{$list->id}}">Deactive</a>
+                            <a class="btn btn-warning" href="{{url('admin/product/status/1')}}/{{$list->id}}">Deactive</a>
                         @endif
-                         <a class="btn btn-danger" href="{{url('admin/color/delete/')}}/{{$list->id}}">Delete</a>
+                         <a class="btn btn-danger" href="{{url('admin/product/delete/')}}/{{$list->id}}">Delete</a>
                         </td>
                     </tr>
                     @endforeach

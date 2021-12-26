@@ -2,7 +2,17 @@
 @section('page_title', 'Category')
 @section('category_select', 'active')
 @section('container')
-{{session('message')}}
+
+@if(session('message'))
+    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+        <span class="badge badge-pill badge-success">Success</span>
+        {{session('message')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+@endif
+										
 <h1 class="mb-5">Category</h1>
 <a href="{{url('admin/category/manage_category')}}">
     <button class="btn btn-success">Add Category</button>

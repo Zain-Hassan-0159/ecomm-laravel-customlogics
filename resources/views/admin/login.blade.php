@@ -47,7 +47,15 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <div class="text-center text-danger">{{session('error')}}</div>
+                        @if(session('error'))
+                            <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                                {{session('error')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        @endif
+        
                             <form action="{{route('admin.auth')}}" method="post">
                                 @csrf
                                 <div class="form-group">
